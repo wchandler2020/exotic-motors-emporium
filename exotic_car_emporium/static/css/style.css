@@ -2615,7 +2615,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .price-box .del{
-    color: red;
+    color: #4d85bd;
     font-size: 15px;
 }
 
@@ -2786,7 +2786,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .slick-btn .slick-arrow-buton {
-    color: #ff214f;
+    color: #4cb5f5;
 }
 
 .slick-btn .sab-4 {
@@ -6051,6 +6051,7 @@ footer {
     z-index: 1;
     background: #fff;
     border-radius: 10px;
+    opacity: .8 !important;
 }
 
 .search-box-4 .search-fields {
@@ -7870,7 +7871,7 @@ table {
 }
 
 .red-plate {
-    background: #f0151f
+    background: #4cb5f5
 }
 
 .green-light-plate {
@@ -7898,7 +7899,7 @@ table {
 }
 
 .midnight-blue-plate {
-    background: #ff214f
+    background: #4cf5b5;
 }
 
 .brown-plate {
@@ -9736,7 +9737,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
         color: #495057 !important;
 }
 .contact-dealer.modal-header{
-    background: #f0151f !important;
+    background: #4cb5f5 !important;
 }
 .contact-dealer.modal-header img{
     width: 75% !important;
@@ -9748,7 +9749,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
     padding-right: 20px;
     margin-bottom: 0;
     line-height: 49px;
-    color: #f0151f;
+    color: #4cb5f5;
 }
 .ratings-2 .cartype{
     font-weight: 600;
@@ -9756,12 +9757,12 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
     padding-right: 20px;
     margin-bottom: 0;
     line-height: 49px;
-    color: #f0151f;
+    color: #4cb5f5;
 }
 
 
 a.nav-link.active{
-  color: #f0151f !important;
+  color: #4cb5f5 !important;
 }
 
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{

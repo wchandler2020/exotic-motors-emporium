@@ -17,10 +17,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#when a user logs in they are immediately directed to the dashboard
 LOGIN_REDIRECT_URL = 'dashboard'
 
-# Application definition
-
+# Django applications installed
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,11 +31,16 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'cars.apps.CarsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
+    #provides a more robust text editor in the admin section
     'ckeditor',
+    #used for adding items like decimals and commas to dollar amount
     'django.contrib.humanize',
     'django.contrib.sites',
+    #middleware for social media login
     'allauth',
     'allauth.account',
+    # google and facebook aAuth
     'allauth.socialaccount',
     #providers
     'allauth.socialaccount.providers.facebook',
@@ -70,12 +75,10 @@ TEMPLATES = [
     },
 ]
 
+#web server gateway interface is used to determine how a web server communicates with web applications
 WSGI_APPLICATION = 'exotic_car_emporium.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+# Postgres Database setup
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -120,21 +123,30 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+
+# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'exotic_car_emporium/static')
+    os.path.join(BASE_DIR, 'exotic_car_emporium/static' )#automatically creates static file in the root
 ]
-
+##MEDIA_ROOT is the Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_URL is a placeholder for the url a client to access media files.
 MEDIA_URL = '/media/'
 
+#Messages middleware
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
+#The SITE_ID setting specifies the database ID of the Site object associated with this particular settings file.
 SITE_ID = 1
+
+# sending emails through the django backend
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'j.boylston77@gmail.com'
+EMAIL_HOST_PASSWORD = 'devine11'
+EMAIL_USE_TLS = True

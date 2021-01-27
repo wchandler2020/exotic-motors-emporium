@@ -5,6 +5,7 @@ from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Car(models.Model):
+    #tuple of vehicle features that a customer can search for a vehicle by
     features_choices = (
         ('Cruise Control', 'Cruise Control'),
         ('Audio Interface', 'Audio Interface'),
@@ -22,7 +23,7 @@ class Car(models.Model):
     )
 
 
-
+    #tuple of states
     state_choice = (
         ('AL', 'Alabama'),
         ('AK', 'Alaska'),
@@ -76,7 +77,7 @@ class Car(models.Model):
         ('WI', 'Wisconsin'),
         ('WY', 'Wyoming'),
     )
-
+    #tuple of number of doors
     door_choices = (
         ('2', '2'),
         ('3', '3'),
@@ -85,6 +86,7 @@ class Car(models.Model):
         ('6', '6'),
     )
 
+    # will create a list of years from 1920 to the current year"2021"
     year_choice = []
     for x in range(1900, (datetime.now().year + 1)):
         year_choice.append((x, x))
@@ -119,6 +121,7 @@ class Car(models.Model):
     is_featured = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
 
+    #defines how a vehicle is listed in the admin section.
     def __str__(self):
         return self.car_title
 
